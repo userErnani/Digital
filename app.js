@@ -102,10 +102,12 @@ function calcular() {
     }
     resultado.innerHTML = (`${quantEtiqs} etiquetas = ${total}`)
 
-   const resemail =( `<h3> ${quantidadeEtq} etiquetas. </h3> <h3>Na medida ${largura} x ${altura}</h3> <h3>valor de ${total}.</h3>`);
+        const resemail =( `<h3> ${quantidadeEtq} etiquetas. </h3> <h3>Na medida ${largura} x ${altura}</h3> <h3>valor de ${total}.</h3>`);
+
     console.log(resemail);
-//    email.innerHTML = resemail
-}
+
+    //    email.innerHTML = resemail
+}   
 
 //************************** OPTION ****************************************
 //   pegar os valores pelos options =  mobile
@@ -177,6 +179,18 @@ function calcularOption() {
 
 function emailCotacao(){
 
+    let nome = document.getElementById('nome').value
+    let email = document.getElementById('email').value
+    let telefone = document.getElementById('telefone').value
+    let mensagem = document.getElementById('mensagem').value
+
+    if (nome == '' || email == '' || telefone == ''){
+        alert('Prencha os campos obrigatórios(*)')
+    }
+    else {
+
+        console.log(nome, email, telefone, mensagem);
+
     let transporter = nodemailer.createTransport({
         host: process.env.HOST,
         port: 465,
@@ -191,13 +205,14 @@ function emailCotacao(){
         },
       });
     
-      // send mail with defined transport object
+     // send mail with defined transport object
         transporter.sendMail({
         from: '"Ernani 👻" <digital@etiquetapontocom.net>', // sender address
-        to: 'etiqueta@etiquetapontocom.net, ernani.acesso@gmail.com',
-        // list of receivers
-        subject: "Hello ✔", // Subject line
-        text: "Hello world?", // plain text body
+        to: email,
+        replyTo: 'ernani.acesso@gmail.com',
+    // list of receivers
+        subject: "Orçamento Etiquetas ✔", // Subject line
+        text: mensagem, // plain text body
         html: "<b>Hello world?</b>", // html body
       }).then(message => {
         try {
@@ -207,6 +222,5 @@ function emailCotacao(){
         }
     
       })
-    
-
+    }
 }
