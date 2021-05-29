@@ -19,13 +19,13 @@
     }
 
     .cabecalho {
-        font-size: 3vw;
+        font-size: 30px;
         color: black;
     }
 
     .radios {
         background-color: rgba(213, 194, 194, 0.500);
-        margin-top: 0px;
+        margin-top: -20px;
 
     }
 
