@@ -2,19 +2,19 @@
 require('dotenv').config()
 const nodemailer = require("nodemailer");
 
-const teste = async (req, res) => {
+const teste = (req, res) => {
 
-const nome2 = req.body.teste
-const email = req.body.email
-const telefone = req.body.telefone
-const mensagem = req.body.mensagem
-
-console.log(nome2, email, telefone, mensagem);
+const txtQtd = req.body.txtQtd
+const txtLargura = req.body.n1
+const txtAltura = req.body.n2
 
 
-    try {
-   
-    res.send('deu certo')
+// console.log(nome)
+
+
+    try { 
+
+        console.log('deu certo' , txtQtd, txtLargura, txtAltura)
   
     } catch (error) {
         res.send(error)

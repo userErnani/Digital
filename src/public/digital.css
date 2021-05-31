@@ -1,0 +1,187 @@
+@media screen and (min-width: 761px) and (max-width: 2000px){
+
+    body {
+        width: 100%;
+        background-image: url(./img/pencils-452238_1280.jpg);
+        background-size: 100%;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-align: center;
+    }
+    #corpo {
+        margin: auto;
+        width: 35%;
+        background-color: rgba(111, 225, 153, 0.72);
+        border-radius: 10px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .cabecalho {
+        height: 10vh;
+        font-size: 2rem;
+        color: black;
+    }
+
+    .radios {
+        background-color: rgba(213, 194, 194, 0.500);
+    }
+
+    .radios input {
+        margin: 12px;
+    }
+
+    .tipoMaterial {
+        width: 100%;
+        text-align: center;
+    }
+    form{
+        text-align: -webkit-center;
+    }
+    .options{
+        margin: auto;
+    }
+
+    select{
+        width: 250px;
+        height: 25px;
+    }
+
+    .txtQuantidade, .txtLargAlt, .txtLargura{
+        color: rgb(38, 38, 39);
+        line-height: 14px;
+    }
+
+    p{
+        margin-top: -8px;
+        color: black;   
+    }
+    .tipoMaterial{
+        font-size: 1.2rem;
+    }
+    input[type=number] {
+        width: 14vw;
+        height: 4vh;
+        border: solid 2px black;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1.4rem;
+    }
+    .options{
+        display:  none !important;
+    }
+
+    .calc {
+        text-align: center;
+        margin: 25px;
+    }
+    .resultadoOption, .calcOption{
+        display: none;
+    }
+
+    button {
+        width: 9vw;
+        height: 4.5vh;
+        border: solid 2px black;
+        border-radius: 25px;
+        background-color: rgb(255, 0, 0);
+        color: blanchedalmond;
+        font-size: 1.8rem;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    }
+
+    button:hover {
+        background-color: rgb(247, 238, 238);
+        color: black;
+    }
+
+    .resultado {
+        font-size: 4vw;
+        margin: auto;
+    }
+    .fim{
+        height: 2vh;
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 760px) {
+
+    body {
+        width: 100%;
+        background-image: url(img/pencils-452238_1280.jpg);
+        background-size: 100%;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-align: center;
+        margin: auto;
+    }
+    #corpo {
+        margin: auto;
+        width: 97%;
+        height: auto;
+        background-color: rgba(252, 252, 252, 0.748);
+        border-radius: 10px;
+    }
+    .cabecalho {
+        width: 100%;
+        font-size: 1.8rem;
+        color: rgb(58, 56, 56);
+    }
+    p {
+        background-color: rgba(252, 252, 252, 0.748);
+        color: rgb(131, 127, 127);
+    }
+    .radios{
+        display:  none !important;
+    }
+    .options{
+        display:  block !important;
+    }
+    
+    #brancoOptions, #tipoMaterialOptions {
+        margin: auto;
+        margin-top: 10px;
+        width: 195px;
+        height: 22px;
+        font-size: 1rem;
+    }
+
+    input {
+        text-align: center;
+        width: 185px;
+        height: 25px;
+        border: solid 1px gray;
+    } 
+    a{
+        color: black;
+    }
+    button{
+        background-color: red;
+        color: black;
+        width: 185px;
+        height: 25px;
+        box-shadow: 5px 2px 1px rgb(124, 123, 123);
+        border-radius: 50px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 1rem;
+        line-height: 2vw;
+
+    }
+    .calc, .resultado{
+        display: none;
+    }
+    .calcOption, .resultadoOption{
+        display: block;
+        margin-top: 20px;
+        font-size: 1.5rem;
+    }
+    #resultadoOption{
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .fim{
+        height: 1rem;
+    }
+
+}
