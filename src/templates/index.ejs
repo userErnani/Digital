@@ -13,7 +13,10 @@
 
 
 <body>
-
+<form action="/digital" method="POST" >
+<input type="text" id="teste" name="teste" value='8'>
+<button>Enviar</button>
+</form>
     <div id="corpo">
 
         <h3 class="cabecalho">Impressora Digital<br>Cálculo de Etiqueta</h3>
@@ -74,9 +77,11 @@
         <div class="resultado">
             <h1><a type="number" name="resultado" id="resultado">R$ 0.00</a></h1>
         </div>
-        <!-- <div id="email">
-            <h3></h3>
+
+        <!-- <div class="resultado">
+            <h1><a type="number" name="resultado" id="email">R$ 0.00</a></h1>
         </div> -->
+
 
         <div class="calcOption">
             <button onclick="calcularOption()">Calcular</button>
@@ -92,7 +97,6 @@
     </div>
 
 
-
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -104,7 +108,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form method="POST" action="/sendmail">
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Nome</label>
                             <input type="text" class="form-control" id="nome" maxlength="20" required>
@@ -133,8 +137,10 @@
                 </div>
             </div>
         </div>
+        </div>
 
-    </div>
+
+    </form>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>

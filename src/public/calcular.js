@@ -1,6 +1,3 @@
-require('dotenv').config()
-const nodemailer = require("nodemailer");
-
 // Aparecer e sumir as DIV impressão com branco
 function radioMaterial() {
 
@@ -100,11 +97,14 @@ function calcular() {
             total = subtotal.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
         }
     }
-    resultado.innerHTML = (`${quantEtiqs} etiquetas = ${total}`)
+    resultado.innerHTML = (`${quantEtiqs} etiquetas = ${total}`) 
 
-   const resemail =( `<h3> ${quantidadeEtq} etiquetas. </h3> <h3>Na medida ${largura} x ${altura}</h3> <h3>valor de ${total}.</h3>`);
-    console.log(resemail);
-//    email.innerHTML = resemail
+   const dados =( `<h3> ${quantidadeEtq} etiquetas.<br> Na medida ${largura} x ${altura}<br> Valor de ${total}.</h3>`);
+
+//    resemail.innerHTML = dados
+
+   
+    console.log(dados);
 }
 
 //************************** OPTION ****************************************
