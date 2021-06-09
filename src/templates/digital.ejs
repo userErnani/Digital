@@ -14,8 +14,6 @@
 
 <body>
 
-    <form action="/digital" method="POST" >
-
     <div id="corpo">
 
         <div class="cabecalho">
@@ -95,7 +93,6 @@
         </button>
 
         <div class="fim"></div>
-    </form>
 
     </div>
 
@@ -105,7 +102,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Enviar Cotação</h5>
+                    <h5 class="modal-title" id="enviarCotacao">Enviar Cotação</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -114,29 +111,29 @@
                     <form>
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Nome</label>
-                            <input type="text" class="form-control" id="nome" maxlength="20" required>
+                            <input type="text" class="form-control" id="emailNome" maxlength="20" required>
                         </div>
 
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Email</label>
-                            <input type="email" class="form-control" id="email" maxlength="40">
+                            <input type="email" class="form-control" id="emailEmail" maxlength="40">
                         </div>
 
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Telefone</label>
-                            <input type="number" class="form-control" id="telefone" maxlength="12" required>
+                            <input type="number" class="form-control" id="emailTelefone" maxlength="12" required>
                         </div>
 
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Mensagem</label>
-                            <input type="text" class="form-control" id="mensagem" maxlength="200">
+                            <input type="text" class="form-control" id="emailMensagem" maxlength="200">
                         </div>
 
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="button" onclick="" class="btn btn-primary">Enviar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="fechar">Fechar</button>
+                    <button type="button" onclick="dadosCotacao()" class="btn btn-primary">Enviar</button>
                 </div>
             </div>
         </div>

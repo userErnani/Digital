@@ -1,3 +1,7 @@
+// require('dotenv').config()
+// const nodemailer = require("nodemailer");
+
+
 // Aparecer e sumir as DIV impressão com branco
 function radioMaterial() {
 
@@ -29,7 +33,6 @@ function optionMaterial() {
 //   pegar os valores pelo radios
 
 function calcular() {
-
     let resultado = document.getElementById('resultado')
     let impDigital = 18     // valor da impressão digital em M²
     let largura = document.getElementById('txtLargura').value
@@ -97,14 +100,55 @@ function calcular() {
             total = subtotal.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
         }
     }
+    
+    const dados =( `<h3> ${quantidadeEtq} etiquetas.<br> Na medida ${largura} x ${altura}<br> Valor de ${total}.</h3>`);
+
+    console.log(dados);
+
     resultado.innerHTML = (`${quantEtiqs} etiquetas = ${total}`) 
 
-   const dados =( `<h3> ${quantidadeEtq} etiquetas.<br> Na medida ${largura} x ${altura}<br> Valor de ${total}.</h3>`);
+}
 
-//    resemail.innerHTML = dados
+function dadosCotacao() {
 
-   
-    console.log(dados);
+    const emailNome = document.querySelector("#emailNome").value
+    const emailEmail = document.querySelector("#emailEmail").value
+    const emailTelefone = document.querySelector("#emailTelefone").value
+    const emailMensagem = document.querySelector("#emailMensagem").value
+
+    console.log(emailNome, emailEmail, emailTelefone, emailMensagem);
+
+    // let transporter = nodemailer.createTransport({
+    //     host: process.env.HOST,
+    //     port: 465,
+    //     ignoreTLS: true,
+    //     secure: true, // true for 465, false for other ports
+    //     tls: {
+    //          rejectUnauthorized: true
+    //      },
+    //     auth: {
+    //       user: process.env.USER, // generated ethereal user
+    //       pass: process.env.PASS, // generated ethereal password
+    //     },
+    //   });
+    
+    //   // send mail with defined transport object
+    //     transporter.sendMail({
+    //     from: '"Ernani 👻" <digital@etiquetapontocom.net>', // sender address
+    //     to: emailEmail , 
+    //     replyTo: 'ernani.acesso@gmail.com',
+    //     // list of receivers
+    //     subject: "Solicitação de Orçamento", // Subject line
+    //     text: "Hello world?", emailNome, emailTelefone, emailMensagem, // plain text body
+    //     html: "<b>Hello world?</b>", // html body
+    //   }).then(message => {
+    //     try {
+    //         console.log(message);
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    //   })
+
 }
 
 //************************** OPTION ****************************************
@@ -173,40 +217,4 @@ function calcularOption() {
         }
     }
     resultado.innerHTML = (`${quantEtiqs} etiquetas = ${total}`)
-}
-
-function emailCotacao(){
-
-    let transporter = nodemailer.createTransport({
-        host: process.env.HOST,
-        port: 465,
-        ignoreTLS: true,
-        secure: true, // true for 465, false for other ports
-        tls: {
-             rejectUnauthorized: true
-         },
-        auth: {
-          user: process.env.USER, // generated ethereal user
-          pass: process.env.PASS, // generated ethereal password
-        },
-      });
-    
-      // send mail with defined transport object
-        transporter.sendMail({
-        from: '"Ernani 👻" <digital@etiquetapontocom.net>', // sender address
-        to: 'etiqueta@etiquetapontocom.net, ernani.acesso@gmail.com',
-        // list of receivers
-        subject: "Hello ✔", // Subject line
-        text: "Hello world?", // plain text body
-        html: "<b>Hello world?</b>", // html body
-      }).then(message => {
-        try {
-            console.log(message);
-        } catch (error) {
-            console.log(error);
-        }
-    
-      })
-    
-
 }
